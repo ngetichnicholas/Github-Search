@@ -10,6 +10,7 @@ import { GithubComponent } from './github/github.component';
 import { UsernameComponent } from './username/username.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { GithubService } from './services/github.service';
+import { DateAgoPipe } from './date-ago.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import { GithubService } from './services/github.service';
     RepositoriesComponent,
     GithubComponent,
     UsernameComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DateAgoPipe
   ],
   imports: [
     BrowserModule,
