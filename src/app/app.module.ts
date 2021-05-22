@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule} from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
@@ -23,6 +24,7 @@ import { DateAgoPipe } from './date-ago.pipe';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule
   ],

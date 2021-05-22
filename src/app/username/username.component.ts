@@ -4,7 +4,7 @@ import { GithubService } from '../services/github.service';
 @Component({
   selector: 'app-username',
   templateUrl: './username.component.html',
-  styleUrls: ['./username.component.css']
+  styleUrls: ['./username.component.css'],
 })
 export class UsernameComponent implements OnInit {
 

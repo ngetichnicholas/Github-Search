@@ -5,7 +5,7 @@ import { GithubService } from '../services/github.service';
 @Component({
   selector: 'app-repositories',
   templateUrl: './repositories.component.html',
-  styleUrls: ['./repositories.component.css']
+  styleUrls: ['./repositories.component.css'],
 })
 export class RepositoriesComponent implements OnInit {
 
