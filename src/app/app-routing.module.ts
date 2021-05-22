@@ -7,6 +7,7 @@ import { UsernameComponent } from './username/username.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
+  { path: 'github', component: GithubComponent},
   { path: 'username', component: UsernameComponent},
   { path: 'repositories', component: RepositoriesComponent},
   { path:'*', component:NotFoundComponent},
