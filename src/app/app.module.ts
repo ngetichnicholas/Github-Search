@@ -8,7 +8,7 @@ import { RepositoriesComponent } from './repositories/repositories.component';
 import { GithubComponent } from './github/github.component';
 import { UsernameComponent } from './username/username.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-
+import { GithubService } from './services/github.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +22,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [GithubService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

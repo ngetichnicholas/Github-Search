@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GithubService } from '../services/github.service';
 
 @Component({
   selector: 'app-username',
@@ -7,7 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsernameComponent implements OnInit {
 
-  constructor() { }
+  profiles: any;
+  repos: any;
+  username:string;
+  constructor(private profileService: GithubService) {
+
+
+  }
+  findProfiles(){
+  	this.profileService.updateProfile(this.username);
+  	// tslint:disable-next-line: indent
+  	// tslint:disable-next-line: indent
+  	this.profileService.getProfileInfo().subscribe(profile => {
+  		console.log(profile);
+  		// tslint:disable-next-line: indent
+  		this.profiles = profile;
+  	// tslint:disable-next-line: indent
+  	});
+
+  	this.profileService.getProfileRepos().subscribe(repos => {
+  		console.log(repos);
+  		this.repos = repos;
+  	})
+  }
 
   ngOnInit(): void {
   }
