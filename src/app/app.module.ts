@@ -10,8 +10,11 @@ import { RepositoriesComponent } from './repositories/repositories.component';
 import { GithubComponent } from './github/github.component';
 import { UsernameComponent } from './username/username.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { GithubService } from './services/github.service';
 import { DateAgoPipe } from './date-ago.pipe';
+import { UserService } from './user.service';
+import { RepoService } from './repo.service';
+import { FormRepoComponent } from './form-repo/form-repo.component';
+import { SearchFormComponent } from './search-form/search-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +23,9 @@ import { DateAgoPipe } from './date-ago.pipe';
     GithubComponent,
     UsernameComponent,
     NotFoundComponent,
-    DateAgoPipe
+    DateAgoPipe,
+    FormRepoComponent,
+    SearchFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,7 @@ import { DateAgoPipe } from './date-ago.pipe';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [GithubService],
+  providers: [UserService, RepoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,38 +1,33 @@
-import { Component, OnInit } from '@angular/core';
-import { GithubService } from '../services/github.service';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { RepoService } from '../repo.service';
+import { Repo } from '../repository';
+// import { GitserviceService } from '../gitservice.service';
 
 
 @Component({
   selector: 'app-repositories',
   templateUrl: './repositories.component.html',
-  styleUrls: ['./repositories.component.css'],
+  styleUrls: ['./repositories.component.css']
 })
 export class RepositoriesComponent implements OnInit {
+  Repos:Repo[]=[]
+ 
 
-  profiles: any;
-  repos: any;
-  username:string;
-
-  constructor(private profileService: GithubService) { }
-
-  ngOnInit(): void {
-  }
-  findProfiles(){
-  	this.profileService.updateProfile(this.username);
-  	// tslint:disable-next-line: indent
-  	// tslint:disable-next-line: indent
-  	this.profileService.getProfileInfo().subscribe(profile => {
-  		console.log(profile);
-  		// tslint:disable-next-line: indent
-  		this.profiles = profile;
-  	// tslint:disable-next-line: indent
-  	});
-
-  	this.profileService.getProfileRepos().subscribe(repos => {
-  		console.log(repos);
-  		this.repos = repos;
-  	})
+  constructor(public gitRepoService:RepoService) {}
+  findRepo(repoTerm){
+    this.gitRepoService.findRepo(repoTerm).subscribe(
+      (success)=>{
+        this.Repos=success
+        return (this.Repos);      }
+    )
+    
   }
 
+  ngOnInit() {
+    this.findRepo("Nyagah-Tech")
+  }
 
 }
+
+
+   

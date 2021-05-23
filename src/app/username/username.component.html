@@ -1,52 +1,70 @@
-<form action="" class="search-form">
-  <div class="form-group">
-    <input type="text" class="form-control fa fa-search" placeholder="&#61442; Search github users profiles"
-      [(ngModel)]="username" name="username">
-    <button class="btn btn-sucess" (click)="findProfiles()"><i class="fas fa-search"></i></button>
-  </div>
-</form>
-  <div *ngIf="profiles">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <p id="di">{{profiles.name}} <small>({{profiles.login}})</small>
-          <span *ngIf="profiles.company">, Works at {{profiles.company}}</span>
-          {{profiles.location}}
-        </p>
+<!-- <div class="parent">
 
-      </div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-sm-3">
-            <img src="{{profiles.avatar_url}}" class="img-circle img-responsive" alt="profiles Image">
-          </div>
-          <div class="col-sm-5">
-            <h1 id="di">Bio</h1>
-            <ul class="list-group ">
-              <li class="list-group-item" *ngIf="profiles.bio">{{profiles.bio}}</li>
-              <li class="list-group-item" *ngIf="profiles.hireable">Available for hire</li>
-              <li class="list-agroup-item" *ngIf="profiles.blog"><a href="{{profiles.blog}}"
-                  target="_blank">{{profiles.blog}}</a></li>
-              <li class="list-group-item" *ngIf="profiles.email"><a
-                  href="emailto:{{profiles.email}}">{{profiles.email}}</a></li>
-            </ul>
-          </div>
-          <div class="col-sm-4">
-            <div>
-              <p>
-                <span class="label label-default">{{profiles.followers}} Followers</span>
-                <span class="label label-primary">Following {{profiles.following}}</span>
-                <span class="label label-success">{{profiles.public_gists}} Public gists</span>
-                <span class="label label-info">{{profiles.public_repos}} Public Repos</span>
-              </p>
-              <p><a href="{{profiles.html_url}}" target="_blank" class="btn btn-success btn-sm">View repo on github</a>
-              </p>
-              <h4>Created:</h4>
-              <div class="btn btn-dark">{{profiles.created_at | dateAgo}} </div>
+</div> -->
+<div  class="row" id="parent">
+    <div class="col-md-3" >
+        <br><br>
+            <app-search-form (emitSearch)="searchGit($event)"></app-search-form><br>
+        <div class="card" id="usr">
+            <div class="card-header">
+                    <p>Username:::   {{Users.login}}</p>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+            <div class="card-body"></div>
+                <img src="{{Users.avatar_url}}" alt="profile pic" height="200px" width="250px">
+                <p><b>{{Users.bio}}</b></p>
 
+                <p>
+                <i>Email :::     </i>
+                <b>{{Users.email}}</b>
+                </p>
+
+                <p><i>Followers :::   </i>
+                <b> {{Users.followers}} </b>
+                </p>
+
+                <p><i>Following :::    </i>
+                <b> {{Users.followers}} </b>
+                </p>
+
+                <p><i>Public repos :::   </i>
+                <b> {{Users.public_repos}} </b>
+                </p>
+
+                <p>
+                <i>Located at :::  </i>
+                <b>{{Users.location}}</b>
+                </p>
+                
+                <div class="card-footer">
+                    <a href=" {{Users.html_url}} "><b>{{Users.html_url}}</b></a>
+                </div>
+                
+            </div>
+           
+        </div>
+        
+        <div *ngIf='Repos' class="col-md-8 grid-container ">
+            <h2 id="repo">Your Repositories</h2>
+            <div class="row">
+                <div class="col-sm-4" *ngFor='let repo of Repos'>
+                    <div class="card" id="card">
+                        <div class="card-header">
+                            <h5 appHighlight>Repo Name: {{repo.name}}</h5> 
+                        </div>
+                        <div class="card-body">
+                            <p> {{repo.description}} </p><br>
+                            <p>created at:::  {{repo.created_at | date}} </p>
+                        </div>
+                        <div class="card-footer">
+                            <a href=" {{repo.html_url}} "> {{repo.html_url}} </a>
+                        </div>
+                        <p> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
 
