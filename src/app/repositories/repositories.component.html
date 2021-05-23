@@ -1,27 +1,28 @@
-<div class="reposi">
-  <p id="fin">Search a  project-name here to find people who have done the same project in Github.</p>
-  <app-form-repo (emitSearchrepo)="findRepo($event)"></app-form-repo><br>
-  <h2 id="repo">Repository results</h2><br><br>
-      <div *ngIf='Repos'>
-          <div class="row">
-              <div class="col-md-3" *ngFor='let repo of Repos'>
-                  <div class="card" id="card">
-                      <div class="card-header">
-                          <h5>Repo Name: {{repo.name}}</h5>
-                      </div>
-                      <div class="card-body">
-                          <p> {{repo.description}} </p>
-                          <br>
-                          <p>Created {{repo.created_at | dateAgoPipe}} on {{repo.created_at | date}} </p>
-  
-                      </div>
-                      <div class="card-footer">
-                          <a href=" {{repo.html_url}} "> {{repo.html_url}}  </a> 
-                      </div>
-                  </div>
-              </div>
-          </div>
-      
-  </div>
-  
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 repos">
+            <h2 id="repo">Repositories</h2>
+            <div *ngIf='Repos'>
+                <div class="row">
+                    <div *ngFor='let repo of Repos'>
+                        <div>
+                            <a href=" {{repo.html_url}} ">
+                                <h3 appUnderline>{{repo.name}}</h3>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <p> {{repo.description}} </p>
+                            <p>Created {{repo.created_at | dateAgoPipe}} on {{repo.created_at | date}} </p>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-md-2">
+            <app-form-repo (emitSearchrepo)="findRepo($event)"></app-form-repo><br>
+        </div>
+    </div>
 </div>

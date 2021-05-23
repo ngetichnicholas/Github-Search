@@ -15,13 +15,13 @@
                 <p>Location: <strong>{{Users.location}}</strong></p>
             </div>
         </div>
-        <div *ngIf='Repos' class="col-md-6">
+        <div *ngIf='Repos' class="col-md-7 repos">
             <h2 id="repo">Repositories</h2>
             <div class="row">
                 <div *ngFor='let repo of Repos'>
                     <div>
                         <div>
-                            <a href=" {{repo.html_url}} "><h3 appHighlight>{{repo.name}}</h3> </a>
+                            <a href=" {{repo.html_url}} "><h3 appUnderline>{{repo.name}}</h3> </a>
                         </div>
                         <div class="card-body">
                             <p> {{repo.description}} </p><br>
@@ -32,7 +32,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <app-search-form (emitSearch)="searchGit($event)"></app-search-form><br>
         </div>
     </div>

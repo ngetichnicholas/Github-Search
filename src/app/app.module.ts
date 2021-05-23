@@ -15,6 +15,7 @@ import { UserService } from './user.service';
 import { RepoService } from './repo.service';
 import { FormRepoComponent } from './form-repo/form-repo.component';
 import { SearchFormComponent } from './search-form/search-form.component';
+import { UnderlineDirective } from './underline.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { SearchFormComponent } from './search-form/search-form.component';
     DateAgoPipe,
     FormRepoComponent,
     SearchFormComponent,
+    UnderlineDirective,
   ],
   imports: [
     BrowserModule,

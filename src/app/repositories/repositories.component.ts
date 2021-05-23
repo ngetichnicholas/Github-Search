@@ -24,7 +24,7 @@ export class RepositoriesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.findRepo("Nyagah-Tech")
+    this.findRepo("ngetichnicholas")
   }
 
 }

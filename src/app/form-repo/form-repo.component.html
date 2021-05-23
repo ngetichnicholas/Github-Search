@@ -1,7 +1,5 @@
-
 <div>
   <form>
-      <input placeholder="search..." name ="repoTerm"  >
-      <button type="submit" class="btn btn-dark" (click)="searchrepos()">search</button>
+      <input class="form-control" placeholder="Search Repositories..." name ="repoTerm" [(ngModel)]="repoTerm" (keyup)="searchrepos()">
   </form>
-</div>
+</div> 
