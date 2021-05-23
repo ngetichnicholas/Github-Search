@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-3">
             <div>
-                <img src="{{Users.avatar_url}}" alt="profile pic" height="200px" width="250px">
+                <img id="avatar" src="{{Users.avatar_url}}" alt="profile pic" height="200px" width="250px">
                 <p>Username: <strong>{{Users.login}}</strong></p>
                 <p>Email: <strong>{{Users.email}}</strong> </p>
 
@@ -19,19 +19,16 @@
             <h2 id="repo">Repositories</h2>
             <div class="row">
                 <div *ngFor='let repo of Repos'>
-                    <div class="card" id="card">
-                        <div class="card-header">
+                    <div>
+                        <div>
                             <a href=" {{repo.html_url}} "><h3 appHighlight>{{repo.name}}</h3> </a>
                         </div>
                         <div class="card-body">
                             <p> {{repo.description}} </p><br>
-                            <p>created at::: {{repo.created_at | date}} </p>
+                            <p>Created {{repo.created_at | dateAgoPipe}} on {{repo.created_at | date}} </p>
                         </div>
-                        <div class="card-footer">
-                            
-                        </div>
-                        <p> </p>
                     </div>
+                    <hr>
                 </div>
             </div>
         </div>

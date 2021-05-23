@@ -18,18 +18,12 @@ export class UsernameComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.searchGit("Nyagah-Tech")
-    // this.userServ.userFuction()
-    // this.user = this.userServ.user
-    // console.log(this.user)
-
+    this.searchGit("ngetichnicholas")
  }
 searchGit(searchTerm){
   this.userHttpService.searchGits(searchTerm).then(
     (success)=>{
       this.Users = this.userHttpService.Users;
-      
-      // console.log(this.Users.login)
     },
     (error)=>{
       console.log(error)
@@ -42,15 +36,4 @@ searchGit(searchTerm){
   
     })
   }
-// searchGit(searchTerm){
-//   this.userHttpService.searchRepos(searchTerm).then(
-//     (success)=>{
-      
-//       alert(this.Repos)
-//       console.log(this.Repos)
-//     }
-//   )
-// }
-
-
 }

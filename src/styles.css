@@ -1,2 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+body {
+  background-color: black;
+  color: white;
+}
+#avatar {
+  border-radius: 50%;
+  height: 30vh;
+  width: 30vh;
+  margin-bottom: 5rem;
+}
+.container {
+  padding-top: 2rem;
+}
