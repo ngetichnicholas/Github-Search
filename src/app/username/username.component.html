@@ -1,70 +1,42 @@
-<!-- <div class="parent">
-
-</div> -->
-<div  class="row" id="parent">
-    <div class="col-md-3" >
-        <br><br>
-            <app-search-form (emitSearch)="searchGit($event)"></app-search-form><br>
-        <div class="card" id="usr">
-            <div class="card-header">
-                    <p>Username:::   {{Users.login}}</p>
-            </div>
-            <div class="card-body"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div>
                 <img src="{{Users.avatar_url}}" alt="profile pic" height="200px" width="250px">
-                <p><b>{{Users.bio}}</b></p>
+                <p>Username: <strong>{{Users.login}}</strong></p>
+                <p>Email: <strong>{{Users.email}}</strong> </p>
 
-                <p>
-                <i>Email :::     </i>
-                <b>{{Users.email}}</b>
-                </p>
+                <p>Followers: <strong>{{Users.followers}}</strong></p>
 
-                <p><i>Followers :::   </i>
-                <b> {{Users.followers}} </b>
-                </p>
+                <p>Following: <strong>{{Users.followers}}</strong></p>
 
-                <p><i>Following :::    </i>
-                <b> {{Users.followers}} </b>
-                </p>
+                <p>Public Repositories: <strong>{{Users.public_repos}}</strong></p>
 
-                <p><i>Public repos :::   </i>
-                <b> {{Users.public_repos}} </b>
-                </p>
-
-                <p>
-                <i>Located at :::  </i>
-                <b>{{Users.location}}</b>
-                </p>
-                
-                <div class="card-footer">
-                    <a href=" {{Users.html_url}} "><b>{{Users.html_url}}</b></a>
-                </div>
-                
+                <p>Location: <strong>{{Users.location}}</strong></p>
             </div>
-           
         </div>
-        
-        <div *ngIf='Repos' class="col-md-8 grid-container ">
-            <h2 id="repo">Your Repositories</h2>
+        <div *ngIf='Repos' class="col-md-6">
+            <h2 id="repo">Repositories</h2>
             <div class="row">
-                <div class="col-sm-4" *ngFor='let repo of Repos'>
+                <div *ngFor='let repo of Repos'>
                     <div class="card" id="card">
                         <div class="card-header">
-                            <h5 appHighlight>Repo Name: {{repo.name}}</h5> 
+                            <a href=" {{repo.html_url}} "><h3 appHighlight>{{repo.name}}</h3> </a>
                         </div>
                         <div class="card-body">
                             <p> {{repo.description}} </p><br>
-                            <p>created at:::  {{repo.created_at | date}} </p>
+                            <p>created at::: {{repo.created_at | date}} </p>
                         </div>
                         <div class="card-footer">
-                            <a href=" {{repo.html_url}} "> {{repo.html_url}} </a>
+                            
                         </div>
                         <p> </p>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="col-md-3">
+            <app-search-form (emitSearch)="searchGit($event)"></app-search-form><br>
+        </div>
     </div>
-    
-    
-    
-
+</div>
