@@ -3,7 +3,8 @@
   <form action="" class="search-form">
     <div class="form-group">
       <input type="text" class="form-control fa fa-search" placeholder="&#61442; Search github users  repo" [(ngModel)]="username"
-        name="username" (keyup)="findProfiles()">
+        name="username">
+        <button class="btn btn-sucess" (click)="findProfiles()"><i class="fas fa-search"></i></button>
     </div>
   </form>
   <div *ngIf="profiles">

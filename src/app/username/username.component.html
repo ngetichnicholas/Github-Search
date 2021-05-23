@@ -1,9 +1,10 @@
-  <form action="" class="search-form">
-    <div class="form-group">
-      <input type="text" class="form-control fa fa-search" placeholder="&#61442; Search github users profiles"
-        [(ngModel)]="username" name="username" (keyup)="findProfiles()">
-    </div>
-  </form>
+<form action="" class="search-form">
+  <div class="form-group">
+    <input type="text" class="form-control fa fa-search" placeholder="&#61442; Search github users profiles"
+      [(ngModel)]="username" name="username">
+    <button class="btn btn-sucess" (click)="findProfiles()"><i class="fas fa-search"></i></button>
+  </div>
+</form>
   <div *ngIf="profiles">
     <div class="panel panel-default">
       <div class="panel-heading">
