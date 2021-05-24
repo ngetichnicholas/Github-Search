@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3 profile">
             <div>
                 <img id="avatar" src="{{Users.avatar_url}}" alt="profile pic" height="200px" width="250px">
                 <p>Username: <strong>{{Users.login}}</strong></p>
@@ -17,7 +17,7 @@
         </div>
         <div *ngIf='Repos' class="col-md-7 repos">
             <h2 id="repo">Repositories</h2>
-            <div class="row">
+            <div class="row repo">
                 <div *ngFor='let repo of Repos'>
                     <div>
                         <div>
@@ -25,7 +25,7 @@
                         </div>
                         <div class="card-body">
                             <p> {{repo.description}} </p><br>
-                            <p>Created {{repo.created_at | dateAgoPipe}} on {{repo.created_at | date}} </p>
+                            <p>Created <span class="days"> {{repo.created_at | dateAgoPipe}}</span> on <span class="date">{{repo.created_at | date}}</span>  </p>
                         </div>
                     </div>
                     <hr>
