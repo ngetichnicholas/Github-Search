@@ -21,9 +21,8 @@ a {
   font-weight: 100;
   font-size: 16;
 }
-.logo {
-  height: 4rem;
-  width: 4rem;
+.fab {
+  font-size: 50px;
 }
 nav {
   height: 6rem;
@@ -45,4 +44,29 @@ nav {
 .days {
   font-weight: 900;
   font-size: 20 !important;
+}
+@media (max-width: 1000px) {
+  .container{
+      max-width:100%;
+  }
+  #avatar {
+    height: 20vh;
+    width: 20vh;
+  }
+}
+@media screen  and (min-width:0px) and (max-width: 500px) {
+  .quote-body {
+    margin:2rem 0 0 0;
+    width: 100%;
+    height: auto;
+  }
+
+}
+@media screen  and (min-width:770px) and (max-width: 1000px) {
+  .quote-body {
+    margin:2rem;
+    width: 20rem;
+    height: auto;
+    margin-left: 15%;
+  }
 }

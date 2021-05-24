@@ -3,6 +3,7 @@
         <div class="col-md-3 profile">
             <div>
                 <img id="avatar" src="{{Users.avatar_url}}" alt="profile pic" height="200px" width="250px">
+                <p>Name: <strong>{{Users.name}}</strong></p>
                 <p>Username: <strong>{{Users.login}}</strong></p>
                 <p>Email: <strong>{{Users.email}}</strong> </p>
 
@@ -25,7 +26,7 @@
                         </div>
                         <div class="card-body">
                             <p> {{repo.description}} </p><br>
-                            <p>Created <span class="days"> {{repo.created_at | dateAgoPipe}}</span> on <span class="date">{{repo.created_at | date}}</span>  </p>
+                            <p>Created <span class="days"> {{repo.created_at | dateAgoPipe}}</span> on <span class="date">{{repo.created_at | date}} by <strong>{{Users.name}}</strong></span></p>
                         </div>
                     </div>
                     <hr>

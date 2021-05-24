@@ -5,6 +5,7 @@ export class Repo {
       public html_url:any,
       public created_at:Date,
 
+
       ){
 
   }

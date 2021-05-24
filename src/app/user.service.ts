@@ -16,6 +16,7 @@ Repos:Repo[]=[]
 constructor (private http:HttpClient) { }
 searchGits(searchTerm:string){
   interface userInterface{
+    name:string,
     login:string,
     avatar_url:any,
     bio:string,
@@ -61,7 +62,7 @@ searchRepos(searchTerm:string){
 
         this.Repos= [];
         for (let i=0; i<results.length;i++){
-          let repo = new Repo(results[i].name,results[i].description,results[i].html_url,results[i].created_at)
+          let repo = new Repo(results[i].name,results[i].description,results[i].html_url,results[i].created_at,)
           this.Repos.push(repo);
         }
         console.log(results);
