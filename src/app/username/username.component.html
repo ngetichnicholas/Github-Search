@@ -20,14 +20,12 @@
             <h2 id="repo">Repositories</h2>
             <div class="row repo">
                 <div *ngFor='let repo of Repos'>
-                    <div>
-                        <div>
-                            <a href=" {{repo.html_url}} "><h3 appUnderline>{{repo.name}}</h3> </a>
-                        </div>
-                        <div class="card-body">
-                            <p> {{repo.description}} </p><br>
-                            <p>Created <span class="days"> {{repo.created_at | dateAgoPipe}}</span> on <span class="date">{{repo.created_at | date}} by <strong>{{Users.name}}</strong></span></p>
-                        </div>
+                    <div class="repo-details">
+                        <h3 appUnderline><a href="{{repo.html_url}}" target="_blank">{{repo.name}}</a></h3>
+                        <p> {{repo.description}} </p>
+                        <p>Created <span class="days"> {{repo.created_at | dateAgoPipe}}</span> on <span
+                            class="date">{{repo.created_at | date}} by <strong>{{Users.name}}</strong></span>
+                        </p>
                     </div>
                     <hr>
                 </div>

@@ -2,23 +2,16 @@
     <div class="row">
         <div class="col-md-10 repos">
             <h2 id="repo">Repositories</h2>
-            <div *ngIf='Repos'>
-                <div class="row">
-                    <div *ngFor='let repo of Repos'>
-                        <div>
-                            <a href=" {{repo.html_url}} ">
-                                <h3 appUnderline>{{repo.name}}</h3>
-                            </a>
-                        </div>
-                        <div>
-                            <p> {{repo.description}} </p>
-                            <p>Created <span class="days"> {{repo.created_at | dateAgoPipe}}</span> on <span class="date">{{repo.created_at | date}}</span>  </p>
-                        </div>
-                    </div>
+            <div *ngFor='let repo of Repos'>
+                <div class="repo-details">
+                    <h3 appUnderline><a href="{{repo.html_url}}" target="_blank">{{repo.name}}</a></h3>
+                    <p> {{repo.description}} </p>
+                    <p>Created <span class="days"> {{repo.created_at | dateAgoPipe}}</span> on <span
+                        class="date">{{repo.created_at | date}}</span>
+                    </p>
                 </div>
-
+                <hr>
             </div>
-
         </div>
         <div class="col-md-2">
             <app-form-repo (emitSearchrepo)="findRepo($event)"></app-form-repo><br>
