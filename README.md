@@ -1,4 +1,18 @@
 # GithubSearch
+## Author
+Nicholas Ngetich
+## Description
+This is a website where users can enter a GitHub username into a form, submit it, and see names and descriptions of that person's public repositories. A user can also look for repositories.
+![alt text]()
+### Prerequisites
+You need to have git installed
+You can install it with the following command in your terminal
+`$ sudo apt install git-all`
+### Setup
+To access this project on your local files, you can clone it using these steps
+1. Open your terminal
+1. Use this command to clone $ git clone https://github.com/ngetichnicholas/Github-Search.git
+1. This will clone the repositoty into your local folder
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.
 
@@ -25,3 +39,19 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Technologies Used
+- TypeScript
+- Angular CLI
+- JavaScript
+- HTML
+- CSS
+### Live Site
+View [live](https://ngetichnicholas.github.io/Github-Search/)
+### License
+This project is under:  
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](/LICENSE)  
+Copyright &copy; 2021 **[Nicholas Ngetich](https://github.com/ngetichnick)**
+### Questions?
+Twitter: **[@ngetichnichoh](https://twitter.com/ngetichnichoh)**  
+Email: **[nicholas.ngetich@student.moringaschool.com](mailto:nicholas.ngetich@student.moringaschool.com)**
+
