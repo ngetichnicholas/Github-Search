@@ -9,10 +9,9 @@ import { Repo } from './repository';
 })
 export class RepoService {
 repo:Repo[]=[];
-token=`?access_token=${environment.myApi}`;
 userUrl=`https://api.github.com/users/`;
   constructor(public http:HttpClient) { }
   findRepo(searchUser:string): Observable<any>{
-    return this.http.get(this.userUrl + searchUser + '/repos'+ this.token);
+    return this.http.get(this.userUrl + searchUser + '/repos');
   }
 }
