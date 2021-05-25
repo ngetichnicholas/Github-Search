@@ -20,7 +20,6 @@ searchGits(searchTerm:string){
     login:string,
     avatar_url:any,
     bio:string,
-    email:any,
     followers:any,
     following:any,
     public_repos: any,
