@@ -51,6 +51,16 @@ nav {
 .btn {
   margin: 1rem 0 1rem 0;
 }
+#sm-footer {
+  bottom: 0; 
+  width: 100%;
+  padding: 25px 15% 25px 20%; 
+  height: 15vh; 
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem; 
+  font-family: 'Roboto Slab', sans-serif; 
+}
 @media (max-width: 1000px) {
   .container{
       max-width:100%;
