@@ -14,7 +14,7 @@ export class RepositoriesComponent implements OnInit {
  
 
   constructor(public gitRepoService:RepoService) {}
-  findRepo(repoTerm){
+  findRepo(repoTerm: string){
     this.gitRepoService.findRepo(repoTerm).subscribe(
       (success)=>{
         this.Repos=success

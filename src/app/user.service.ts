@@ -10,7 +10,7 @@ import { Repo } from './repository';
 })
 export class UserService {
 
-Users:User
+  Users!: User;
 Repos:Repo[]=[]
 
 constructor (private http:HttpClient) { }
@@ -23,7 +23,7 @@ searchGits(searchTerm:string){
     email:any,
     followers:any,
     following:any,
-    public_repos,
+    public_repos: any,
     location:any,
    html_url:any
   }

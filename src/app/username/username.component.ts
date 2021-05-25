@@ -11,7 +11,7 @@ import { UserService } from '../user.service';
   styleUrls: ['./username.component.css']
 })
 export class UsernameComponent implements OnInit {
-  Users:User;
+  Users!: User;
   Repos:Repo[]=[]
   constructor(public userHttpService:UserService) { 
 
@@ -20,7 +20,7 @@ export class UsernameComponent implements OnInit {
   ngOnInit() {
     this.searchGit("ngetichnicholas")
  }
-searchGit(searchTerm){
+searchGit(searchTerm: string){
   this.userHttpService.searchGits(searchTerm).then(
     (success)=>{
       this.Users = this.userHttpService.Users;
