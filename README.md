@@ -3,7 +3,7 @@
 Nicholas Ngetich
 ## Description
 This is a website where users can enter a GitHub username into a form, submit it, and see names and descriptions of that person's public repositories. A user can also look for repositories.
-![alt text]()
+![alt text](https://github.com/ngetichnicholas/Github-Search/blob/main/src/assets/images/landing.png)
 ### Prerequisites
 You need to have git installed
 You can install it with the following command in your terminal
